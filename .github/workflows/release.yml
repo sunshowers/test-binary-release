@@ -42,7 +42,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     container: ${{ matrix.container }}
     steps:
-      - if: matrix.config.container == 'ubuntu:18.04'
+      - if: matrix.container == 'ubuntu:18.04'
         run: |
           set -eu
           apt-get -qq update
