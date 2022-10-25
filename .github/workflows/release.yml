@@ -44,13 +44,13 @@ jobs:
     steps:
       - if: matrix.config.container == 'ubuntu:18.04'
         run: |
-        set -eu
-        apt-get -qq update
-        apt-get install -y software-properties-common sudo build-essential
-        add-apt-repository ppa:git-core/ppa
-        apt-get -qq update
-        apt-get -qq -y install git-core
-        git config --global --add safe.directory "${GITHUB_WORKSPACE}"
+          set -eu
+          apt-get -qq update
+          apt-get install -y software-properties-common sudo build-essential
+          add-apt-repository ppa:git-core/ppa
+          apt-get -qq update
+          apt-get -qq -y install git-core
+          git config --global --add safe.directory "${GITHUB_WORKSPACE}"
       - uses: actions/checkout@v2
       - name: Install Rust
         uses: actions-rs/toolchain@v1
